@@ -9,7 +9,6 @@
 </head>
 <body>
 <header class="main-header">
-aa
     <div class="container">
         <div class="contacts">
             <ul class="social-list">
@@ -28,12 +27,14 @@ aa
 <nav class="main-nav cf">
     <div class="container">
         <a href="#" class="logo">carft lance</a>
+        <div class="menu"><span></span></div>
         <ul class="nav-list">
             <li><a href="#">products</a></li>
             <li><a href="#">solutions</a></li>
             <li><a href="#">support</a></li>
             <li><a href="#" class="sign-link">Sign In</a></li>
         </ul>
+
 
     </div>
 </nav>
@@ -368,6 +369,9 @@ aa
     if (isFlexSupported != true) {
         $('.col-3').addClass('equal-column');
     }
+    $('.menu').click(function(){
+        $(this).toggleClass('on');
+    });
 
 </script>
 

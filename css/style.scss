@@ -21,7 +21,12 @@
   }
 }
 
-
+::selection {
+  background: #ddd; /* Safari */
+}
+::-moz-selection {
+  background: #ddd; /* Firefox */
+}
 
 
 * {
@@ -57,6 +62,7 @@ ul, li {
     max-width: 768px;
   }
 }
+
 /*HEADER*/
 .main-header {
   height: 40px;
@@ -96,7 +102,44 @@ ul, li {
   height: 80px;
   background-color: #fff;
   color: #000;
-
+  .menu {
+    width: 40px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+    span {
+      position: relative;
+      background-color:#111;
+      height:2px;
+      width: 100%;
+      display: block;
+      top:12px;
+      &:before, &:after {
+        content:"";
+        height:2px;
+        width: 100%;
+        position: absolute;
+        background-color:#111;
+        display: block;
+        top:-12px;
+        transition: .3s;
+      }
+      &:after {
+        top:12px;
+      }
+    }
+    &.on {
+      span {
+        background-color: transparent;
+        &:before {
+          transform:translateY(12px) rotate(45deg) ;
+        }
+        &:after {
+          transform:translateY(-12px) rotate(-45deg) ;
+        }
+      }
+    }
+  }
   .logo {
     float: left;
     line-height: 80px;
@@ -114,7 +157,11 @@ ul, li {
     margin-right: 40px;
     text-transform: capitalize;
     font-size: 14px;
+    transition: .4s;
     &:last-child {margin-right: 0;}
+    &:hover {
+      color: #ccc;
+    }
   }
   .sign-link {
     border: 1px solid #5db442;
@@ -123,11 +170,19 @@ ul, li {
     font-weight: 500;
     color: #5db442;
     font-size: 12px;
+    transition: .4s;
+    &:hover {
+      background-color: #5db442;
+      color: #fff;
+    }
   }
   @supports (display: flex) {
     .container {
       display: flex;
       justify-content:space-between;
+    }
+    .logo {
+      float: none;
     }
     .nav-list  {
       float: none;
@@ -136,6 +191,53 @@ ul, li {
       li {
         float: none;
       }
+    }
+  }
+  @media (max-width:768px) {
+    height:auto;
+    .container {
+      padding: 0;
+      display: block;
+    }
+    .nav-list {
+      display: none;
+      width: 100%;
+      text-align: center;
+      li {
+        display: block;
+        margin-right: 0;
+        color: #000;
+        a {
+          display: block;
+          color: #000;
+          &:not(.sign-link):hover {
+            background-color: rgba(0,0,0,.15);
+            color: #000;
+          }
+          &.sign-link {
+            display: inline;
+            padding: 20px 50px;
+            color: #5db442;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .menu {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+    }
+    .menu.on ~ .nav-list {
+      display: block;
     }
   }
 }
