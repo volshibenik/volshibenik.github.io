@@ -102,6 +102,7 @@ ul, li {
   height: 80px;
   background-color: #fff;
   color: #000;
+
   .menu {
     width: 40px;
     height: 40px;
@@ -237,7 +238,7 @@ ul, li {
       top: 60px;
     }
     .menu.on ~ .nav-list {
-      display: block;
+
     }
   }
 }
@@ -247,7 +248,7 @@ ul, li {
   text-align: center;
   padding-bottom: 70px;
   .main-title {
-    padding: 100px 130px 0;
+    padding: 100px 12% 0;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 48px;
@@ -255,7 +256,7 @@ ul, li {
     line-height: 60px;
   }
   .subt {
-    padding: 0 200px;
+    padding: 0 20%;
     font-size: 16px;
     font-weight: 300;
     line-height: 26px;

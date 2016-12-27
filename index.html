@@ -371,7 +371,12 @@
     }
     $('.menu').click(function(){
         $(this).toggleClass('on');
+        $('.nav-list').slideToggle(450);
     });
+    $(window).resize(function () {
+        $('.nav-list').attr('style', '');
+        $('.menu').removeClass('on');
+    })
 
 </script>
 

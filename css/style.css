@@ -703,9 +703,6 @@ ul, li {
     right: 20px;
     top: 60px;
   }
-  .main-nav .menu.on ~ .nav-list {
-    display: block;
-  }
 }
 
 /*BANNER*/
@@ -716,7 +713,7 @@ ul, li {
 }
 
 .s-banner .main-title {
-  padding: 100px 130px 0;
+  padding: 100px 12% 0;
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 48px;
@@ -725,7 +722,7 @@ ul, li {
 }
 
 .s-banner .subt {
-  padding: 0 200px;
+  padding: 0 20%;
   font-size: 16px;
   font-weight: 300;
   line-height: 26px;
